@@ -1,0 +1,271 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f3f6fa, #e3ebf7);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Header */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background:  #333;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header h1 {
+    font-size: 1.8rem;
+}
+
+.profile-header .btn {
+    padding: 10px 15px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-header .btn:hover {
+    background-color: #e60000;
+}
+
+/* Main Content */
+.profile-management {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-management section {
+    margin-bottom: 30px;
+}
+
+.profile-management h2 {
+    margin-bottom: 20px;
+    color: #424443;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Profile Picture Section */
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.profile-picture-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0f8b62;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture-container input {
+    display: none;
+}
+
+.profile-picture-container .btn {
+    padding: 10px 20px;
+    width: 141px;
+    height: 4%;
+    background: #05847d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: small;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.profile-picture-container .btn:hover {
+    background-color: #044544;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #0dd588;
+    outline: none;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #1f9568;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Wishlist */
+#wishlist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#wishlist-list li {
+    background: #f3f1f1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Credit Card Button */
+.credit-card-section .btn {
+    background-color: #00cc92;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.credit-card-section .btn:hover {
+    background-color: #085448;
+}
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.profile-picture-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-picture-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #23feda;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+}
+
+.upload-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.upload-overlay i {
+    color: white;
+    font-size: 24px;
+}
+
+.profile-picture-wrapper:hover .upload-overlay {
+    opacity: 1;
+}
+
+.profile-picture-wrapper:hover img {
+    opacity: 0.8;
+}
+.wishlist-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.wishlist-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-item-card {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.wishlist-item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.wishlist-item-details h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.wishlist-item-details p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.credit-card-details {
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.credit-card-details p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #333;
+}

@@ -1,0 +1,277 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f6f9; /* Light gray background */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.admin-header {
+    background-color: #fcfdff; /* Primary blue color */
+    color: #4d4d4d;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header .btn {
+    padding: 10px 20px;
+    background-color: #d9534f; /* Red button for logout */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-header .btn:hover {
+    background-color: #c9302c;
+}
+
+/* Navigation Styles */
+.admin-nav {
+    background-color: #e6e2e2;
+    padding: 10px 20px;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-nav .btn {
+    background-color: #0044cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-nav .btn:hover {
+    background-color: #003399;
+}
+
+/* Main Content */
+#admin-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 24px;
+    color: #0044cc;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #0044cc;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Form Styles */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #0044cc;
+}
+
+form button {
+    background-color: #28a745; /* Green button for add */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.btn-primary {
+    background-color: #0044cc;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #003399;
+}
+
+/* Chart.js Canvas */
+canvas {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .admin-nav {
+        flex-direction: column;
+    }
+
+    .admin-nav .btn {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: 300px;
+    }
+}
+/* Rest of your styles */
+
+/* Chart Container and Box */
+/* Ensure your reset and base styles remain */
+
+/* Chart Container and Box */
+.chart-container {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between charts */
+    gap: 20px; /* Adds space between chart boxes */
+    flex-wrap: nowrap; /* Ensures the charts remain on the same line */
+    margin-top: 20px;
+    width: 100px;
+}
+
+.chart-box {
+    flex: 1; /* Ensures charts take equal width */
+    width: 600px; /* Restricts the width of each chart */
+    height: 400px; /* Ensures consistent height */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+}
+
+
+#vehicles-section {
+    margin: 20px;
+}
+
+#vehicles-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#vehicles-table th,
+#vehicles-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#vehicles-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#vehicles-table img {
+    border-radius: 5px;
+}
+
+form input,
+form button {
+    margin: 10px 0;
+}

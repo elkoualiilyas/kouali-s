@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - E-Commerce Backoffice</title>
+    <style>
+         /* Reset and Base Styles */
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+            animation: bg-scrolling-reverse 0.92s infinite linear;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes bg-scrolling-reverse {
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 28px;
+            color: #0d7a7e;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 14px;
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            width: 100%;
+        }
+
+        input[type="email"], input[type="password"] {
+            background-color: #108d9e;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #0f1011;
+        }
+
+        .btn-one {
+            width: 100px;
+            min-height: 40px;
+            display: inline-flex;
+            font-family: 'Nunito', sans-serif;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1.3px;
+            font-weight: 700;
+            color: #313133;
+            background: linear-gradient(90deg, rgb(64, 120, 109) 0%, rgba(79,209,197,1) 100%);
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out 0s;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            padding: 10px;
+        }
+
+        .btn-one span {
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+
+        .btn-one::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-top-style: solid;
+            border-bottom-style: solid;
+            border-top-color: rgba(255, 255, 255, 0.5);
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+            transform: scale(0.1, 1);
+        }
+
+        .btn-one:hover span {
+            letter-spacing: 2px;
+        }
+
+        .btn-one:hover::before {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+
+        .btn-one::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-one:hover::after {
+            opacity: 0;
+            transform: scale(0.1, 1);
+        }
+
+        .divider {
+            margin: 20px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .action-buttons .btn-one {
+            width: 48%;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3>Login</h3>
+        <form id="login-form">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="Enter your email" required>
+
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+
+            <button type="submit" class="btn-one"><span>Login</span></button>
+        </form>
+
+        <div class="divider">or</div>
+
+        <div class="action-buttons">
+            <button class="btn-one" onclick="window.location.href='index.html'"><span>Go Back Home</span></button>
+            <button class="btn-one" onclick="window.location.href='register.html'"><span>Register</span></button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultAdmin = {
+                username: 'Admin',
+                email: 'admin@ecommerce.com',
+                password: 'admin123',
+                role: 'admin'
+            };
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const adminExists = users.some(user => user.email === defaultAdmin.email);
+
+            if (!adminExists) {
+                users.push(defaultAdmin);
+                localStorage.setItem('users', JSON.stringify(users));
+                console.log('Default admin account created:', defaultAdmin.email);
+            }
+
+            const loginForm = document.getElementById('login-form');
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value.trim();
+
+                if (email === '' || password === '') {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                const couriers = JSON.parse(localStorage.getItem('couriers')) || [];
+
+                const user = users.find(user => user.email === email && user.password === password);
+                if (user) {
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+
+                    if (user.role === 'admin') {
+                        alert(`Welcome, Admin! Redirecting to the Admin Dashboard.`);
+                        window.location.href = 'admin-dashboard/index.html';
+                    } else if (user.role === 'seller') {
+                        alert(`Welcome, ${user.username}! Redirecting to the Seller Dashboard.`);
+                        window.location.href = 'seller-dashboard/index.html';
+                    } else if (user.role === 'user') {
+                        alert(`Welcome, ${user.username}! Redirecting to the User Dashboard.`);
+                        window.location.href = 'user-dashboard/index.html';
+                    }
+                    return;
+                }
+
+                const courier = couriers.find(courier => courier.login === email && courier.password === password);
+                if (courier) {
+                    localStorage.setItem('currentCourier', JSON.stringify(courier));
+                    alert(`Welcome, ${courier.name}! Redirecting to the Courier Dashboard.`);
+                    window.location.href = 'courier-dashboard/index.html';
+                    return;
+                }
+
+                alert('Invalid email or password.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="admin-header">
+        <h1>Admin Dashboard</h1>
+        <button id="logout-button" class="btn btn-danger">Logout</button>
+    </header>
+
+    <nav class="admin-nav">
+        <button id="view-products" class="btn btn-primary">Products</button>
+        <button id="view-users" class="btn btn-primary">Users</button>
+        <button id="view-income" class="btn btn-primary">Income</button>
+        <button id="view-couriers" class="btn btn-primary">Couriers</button>
+        <button id="view-overview" class="btn btn-primary">Dashboard Overview</button>
+        <button id="view-vehicles" class="btn btn-primary">Vehicles</button>
+
+    </nav>
+
+    <main id="admin-content">
+        <section id="overview-section" class="hidden">
+            <h2>Overview</h2>
+            <div id="chart-container"></div>
+        </section>
+
+        <section id="products-section" class="hidden">
+            <h2>Manage Products</h2>
+            <table id="products-table">
+                <!-- Table dynamically populated -->
+            </table>
+            <button id="export-products-csv" class="btn btn-success">Export CSV</button>
+            <button id="export-products-pdf" class="btn btn-success">Export PDF</button>
+        </section>
+
+        <section id="users-section" class="hidden">
+            <h2>Manage Users</h2>
+            <table id="users-table">
+                <!-- Table dynamically populated -->
+            </table>
+            <button id="export-users-csv" class="btn btn-success">Export CSV</button>
+            <button id="export-users-pdf" class="btn btn-success">Export PDF</button>
+        </section>
+
+        <section id="income-section" class="hidden">
+            <h2>Income Tracking</h2>
+            <table id="income-table">
+                <!-- Table dynamically populated -->
+            </table>
+        </section>
+
+        <section id="couriers-section" class="hidden">
+            <h2>Manage Couriers</h2>
+            <form id="add-courier-form">
+                <input type="text" id="courier-name" placeholder="Courier Name" required>
+                <input type="text" id="courier-login" placeholder="Courier Login" required>
+                <input type="password" id="courier-password" placeholder="Courier Password" required>
+                <button type="submit" class="btn btn-success">Add Courier</button>
+            </form>
+            <table id="couriers-table">
+                <!-- Table dynamically populated -->
+            </table>
+        </section>
+        <section id="vehicles-section" class="hidden">
+            <h2>Manage Vehicles</h2>
+            <form id="add-vehicle-form">
+                <input type="text" id="vehicle-mark" placeholder="Vehicle Mark" required>
+                <input type="text" id="vehicle-model" placeholder="Vehicle Model" required>
+                <input type="file" id="vehicle-image" accept="image/*" required>
+                <button type="submit" class="btn btn-success">Add Vehicle</button>
+            </form>
+            <table id="vehicles-table">
+                <tr>
+                    <th>Mark</th>
+                    <th>Model</th>
+                    <th>Image</th>
+                    <th>Assigned Courier</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </section>
+        
+    </main>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+   
+</body>
+</html>

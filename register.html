@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - E-Commerce Backoffice</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+            animation: bg-scrolling-reverse 0.92s infinite linear;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes bg-scrolling-reverse {
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 28px;
+            color: #0dafa7;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #666666;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            background-color: #f1f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #17b3b0;
+        }
+
+        .btn-one {
+            width:300px;
+        min-height: 40px;
+        display: inline-flex;
+        font-family: 'Nunito', sans-serif;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1.3px;
+        font-weight: 700;
+        color: #313133;
+        background: #124540;
+     background: linear-gradient(90deg, rgb(64, 120, 109) 0%, rgba(79,209,197,1) 100%);
+        border: none;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out 0s;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        padding: 10px;
+        }
+
+        .btn-one span {
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+
+        .btn-one::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-top-style: solid;
+            border-bottom-style: solid;
+            border-top-color: rgba(255, 255, 255, 0.5);
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+            transform: scale(0.1, 1);
+        }
+
+        .btn-one:hover span {
+            letter-spacing: 2px;
+        }
+
+        .btn-one:hover::before {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+
+        .btn-one::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.3s;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-one:hover::after {
+            opacity: 0;
+            transform: scale(0.1, 1);
+        }
+
+        .role-container {
+            margin-bottom: 20px;
+        }
+
+        .role-container input {
+            margin-right: 5px;
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-footer a {
+            color: #21bda5;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3>Register</h3>
+        <form id="register-form">
+            <label for="reg-username">Username</label>
+            <input type="text" id="reg-username" required>
+
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" required>
+
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" required>
+
+            <div class="role-container">
+                <label>Register As:</label>
+                <input type="radio" id="role-user" name="role" value="user" checked>
+                <label for="role-user">User</label>
+
+                <input type="radio" id="role-seller" name="role" value="seller">
+                <label for="role-seller">Seller</label>
+            </div>
+
+            <button type="submit" class="btn-one"><span>Register</span></button>
+        </form>
+        <div class="form-footer">
+            Already have an account? <a href="login.html">Login here</a>.
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const registerForm = document.getElementById('register-form');
+            registerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('reg-username').value.trim();
+                const email = document.getElementById('reg-email').value.trim();
+                const password = document.getElementById('reg-password').value.trim();
+                const role = document.querySelector('input[name="role"]:checked').value;
+
+                if (username === '' || email === '' || password === '') {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+
+                const userExists = users.some(user => user.email === email);
+                if (userExists) {
+                    alert('Email is already registered.');
+                    return;
+                }
+
+                users.push({ username, email, password, role });
+                localStorage.setItem('users', JSON.stringify(users));
+
+                alert('Registration successful! You can now log in.');
+
+                registerForm.reset();
+                document.getElementById('role-user').checked = true;
+
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>

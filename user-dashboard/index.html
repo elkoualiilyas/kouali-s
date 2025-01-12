@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>Welcome to kouali's</h1>
+        <button id="logout-button" class="btn btn-danger">Logout</button>
+    </header>
+
+    <nav class="dashboard-nav">
+        <div class="profile-section" >
+           <a href="profile.html"><img src="profile.png" alt="Profile" id="profile-icon" class="profile-icon" href="profile.html"></a> 
+        </div>
+        <button id="view-products-button" class="btn btn-primary">View Products</button>
+        <button id="view-cart-button" class="btn btn-primary">View Cart</button>
+        <button id="view-credit-card-button" class="btn btn-primary">Manage Credit Card</button>
+        <button id="view-orders-button" class="btn btn-primary">View Orders</button>
+
+    </nav>
+
+  
+
+    <main id="user-dashboard">
+        <!-- Product Catalog -->
+        <section id="product-catalog" class="content-section">
+            <h2 class="section-title">Product Catalog</h2>
+            <div class="filter-container">
+                <select id="categories-dropdown">
+                    <!-- Options will be dynamically populated -->
+                </select>
+                
+            </div>
+            <ul id="product-list" class="grid-list">
+                <!-- Dynamically populated -->
+            </ul>
+        </section>
+    
+        <!-- Shopping Cart -->
+        <section id="shopping-cart" class="hidden content-section">
+            <h2 class="section-title">Your Cart</h2>
+            <ul id="cart-list" class="list">
+                <!-- Dynamically populated -->
+            </ul>
+            <div id="cart-summary" class="summary-box">
+                <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
+                <button id="proceed-checkout" class="btn btn-success" disabled>Proceed to Checkout</button>
+            </div>
+        </section>
+    
+        <!-- Credit Card Management -->
+        <section id="credit-card-management" class="hidden content-section">
+            <h2 class="section-title">Credit Card Management</h2>
+            <form id="credit-card-form" class="form">
+                <input type="text" id="card-number" placeholder="Card Number" maxlength="16" required>
+                <input type="text" id="card-holder" placeholder="Card Holder Name" required>
+                <input type="month" id="card-expiry" required>
+                <button type="submit" class="btn btn-success">Add Credit Card</button>
+            </form>
+            <ul id="credit-card-list" class="list">
+                <!-- Dynamically populated -->
+            </ul>
+        </section>
+        <section id="orders-section" class="hidden content-section">
+            <h2 class="section-title">Your Orders</h2>
+            <ul id="order-list" class="list">
+                <!-- Dynamically populated -->
+            </ul>
+        </section>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

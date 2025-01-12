@@ -1,0 +1,718 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f7f9fc, #e4ecf7);
+    color: #333;
+}
+
+/* Header */
+.dashboard-header {
+    background: linear-gradient(to right, #313234, #181a1f);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.dashboard-header .btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dashboard-header .btn:hover {
+    background: #e60000;
+    transform: scale(1.1);
+}
+
+/* Navigation */
+.dashboard-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f1f3f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-nav .btn {
+    padding: 10px 20px;
+    background: #05847d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dashboard-nav .btn:hover {
+    background: #034a34;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Sections */
+.content-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product List */
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#product-list li {
+    padding: 15px;
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#product-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#product-list img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+
+#product-list span {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+#product-list .btn {
+    padding: 10px 20px;
+    width: 141px;
+    height: 4%;
+    background: #05847d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: small;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#product-list .btn:hover {
+    background: #034a34;
+    transform: scale(1.1);
+}
+
+/* General Styling for the Cart Section */
+#shopping-cart {
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Title Styling */
+#shopping-cart h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Cart List Styling */
+#cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+#cart-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#cart-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Name and Price */
+#cart-list li span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Quantity Input Styling */
+#cart-list li input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+#cart-list li input[type="number"]:focus {
+    border-color: #0044cc;
+    outline: none;
+}
+
+/* Remove Button Styling */
+#cart-list li .btn-danger {
+    padding: 5px 15px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#cart-list li .btn-danger:hover {
+    background: #e60000;
+    transform: scale(1.1);
+}
+
+/* Cart Summary Styling */
+#cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f3f8;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#cart-summary .cart-total {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Proceed to Checkout Button */
+#proceed-checkout {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: #28a781;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#proceed-checkout:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#proceed-checkout:hover:not(:disabled) {
+    background: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design for Cart Section */
+@media (max-width: 768px) {
+    #cart-list li {
+        flex-wrap: wrap;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #cart-list li span {
+        flex: 1 1 100%;
+    }
+
+    #cart-list li input,
+    #cart-list li .btn-danger {
+        flex: 1 1 48%;
+    }
+
+    #cart-summary {
+        flex-wrap: wrap;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #cart-summary .cart-total,
+    #proceed-checkout {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* Credit Card List Styling */
+#credit-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+#credit-card-list li {
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    gap: 10px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+#credit-card-list span {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+#credit-card-list .card-number {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #25417a;
+}
+
+#credit-card-list .card-holder {
+    color: #555;
+}
+
+#credit-card-list .card-expiry {
+    font-style: italic;
+    color: #666;
+}
+
+#credit-card-list button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    width: 120px; /* Consistent button size */
+}
+
+#credit-card-list .btn-warning {
+    background: #ffc107;
+    color: white;
+}
+
+#credit-card-list .btn-warning:hover {
+    background: #e0a800;
+    transform: scale(1.05);
+}
+
+#credit-card-list .btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+#credit-card-list .btn-danger:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Credit Card Section */
+@media (max-width: 768px) {
+    #credit-card-form input {
+        flex: 1 1 100%; /* Full-width inputs on smaller screens */
+    }
+
+    #credit-card-list li {
+        padding: 15px;
+    }
+
+    #credit-card-list button {
+        width: 100%; /* Full-width buttons on smaller screens */
+    }
+}
+/* Orders Section Styling */
+#orders-section {
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
+    margin-top: 20px;
+}
+
+#orders-section .section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #089f9c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#order-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#order-list li {
+    background: linear-gradient(to bottom, #ffffff, #e8f0fe);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+#order-list li strong {
+    color: #000000;
+    font-weight: 600;
+}
+
+#order-list ul {
+    list-style: none;
+    padding: 10px 0 0 20px;
+    margin: 0;
+}
+
+#order-list ul li {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#order-list button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#order-list .btn-success {
+    background: #128e75;
+    color: white;
+}
+
+#order-list .btn-success:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+#order-list .btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+#order-list .btn-danger:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Orders Section */
+@media (max-width: 768px) {
+    #order-list li {
+        padding: 15px;
+    }
+
+    #order-list button {
+        width: 100%; /* Full-width buttons on smaller screens */
+    }
+}
+
+
+.wishlist-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.wishlist-btn .fa-heart {
+    color: #ccc; /* Default heart color */
+    transition: color 0.3s ease;
+}
+
+.wishlist-btn .fa-heart.wishlist-active {
+    color: #e74c3c; /* Red heart when added to wishlist */
+}
+
+/* Review Section */
+.review-section {
+    margin-top: 15px;
+    text-align: left;
+    width: 100%;
+}/* Style for the dropdown container */
+#categories-dropdown {
+    width: 220px;
+    padding: 10px 15px;
+    border: 1px solid #0aa17b;
+    border-radius: 25px;
+    background-color: #4c534f;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a custom arrow */
+#categories-dropdown::after {
+    font-size: 12px;
+    color: #048067;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Add hover effects */
+#categories-dropdown:hover {
+    background-color: #ffffff;
+    border-color: #02c5ab;
+    color: #04634e;
+}
+
+/* Add focus styles */
+#categories-dropdown:focus {
+    border-color: #0cbd94;
+    box-shadow: 0px 0px 10px rgba(8, 198, 170, 0.5);
+}
+
+/* Optional: Disabled option styling */
+#categories-dropdown option:disabled {
+    color: #999;
+}
+/* Profile Icon */
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.2s;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+    transform: translateX(100%);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: color 0.2s;
+}
+
+.sidebar-menu button:hover {
+    color: #007bff;
+}
+
+/* Backdrop */
+
+.btn {
+    padding: 10px 20px;
+    background: #0044cc;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.3s;
+}
+
+.btn:hover::before {
+    left: -50%;
+}
+
+.btn:hover {
+    background-color: #003399;
+    transform: scale(1.05);
+}
+/* Credit Card Form Styling */
+#credit-card-form {
+    background: #ffffff; /* White card background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+#credit-card-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#credit-card-form input:focus {
+    outline: none;
+    border-color: #0044cc;
+    box-shadow: 0 0 8px rgba(0, 68, 204, 0.3);
+}
+
+#credit-card-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #28a745, #218838);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#credit-card-form button:hover {
+    background: linear-gradient(45deg, #218838, #1e7e34);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#credit-card-form button:active {
+    transform: translateY(1px);
+    background: linear-gradient(45deg, #1c7430, #155d27);
+}
+
+/* Form Title Styling */
+#credit-card-form h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0044cc;
+    margin-bottom: 20px;
+}
+
+/* Optional Additional Styling */
+#credit-card-form::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 50%;
+    background: linear-gradient(to right, #28a745, #0044cc);
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
+}

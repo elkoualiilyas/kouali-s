@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>Welcome, Seller</h1>
+        <button id="logout-button" class="btn btn-danger">Logout</button>
+    </header>
+
+    <nav class="dashboard-nav">
+        <button id="manage-categories-button" class="btn btn-primary">Manage Categories</button>
+        <button id="manage-products-button" class="btn btn-primary">Manage Products</button>
+    </nav>
+
+    <main id="dashboard-content">
+        <section id="overview">
+            <h2>Your Overview</h2>
+            <div>
+                <h3>Categories</h3>
+                <ul id="category-list">
+                    <!-- Dynamically populated -->
+                </ul>
+            </div>
+            <div>
+                <h3>Products</h3>
+                <ul id="product-list">
+                    <!-- Dynamically populated -->
+                </ul>
+            </div>
+        </section>
+        <section id="user-info">
+            <h2>User Info</h2>
+            <p id="user-name">Name: Seller</p>
+            <p id="user-total-categories">Total Categories: 0</p>
+            <p id="user-total-products">Total Products: 0</p>
+        </section>
+        
+        <section id="manage-categories" class="hidden">
+            <h2>Manage Categories</h2>
+            <form id="add-category-form">
+                <input type="text" id="category-name" placeholder="Category Name" required>
+                <button type="submit" class="btn btn-success">Add Category</button>
+            </form>
+            <ul id="categories-management-list">
+                <!-- Dynamically populated -->
+            </ul>
+        </section>
+
+        <section id="manage-products" class="hidden">
+            <h2>Manage Products</h2>
+            <form id="add-product-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                <input type="number" id="product-price" placeholder="Price" required>
+                <input type="number" id="product-quantity" placeholder="Quantity" required>
+                <select id="product-category">
+                    <!-- Dynamically populated with categories -->
+                </select>
+                <input type="file" id="product-image" accept="image/*" required>
+                <button type="submit" class="btn btn-success">Add Product</button>
+            </form>
+            <ul id="products-management-list">
+                <!-- Dynamically populated -->
+                <div id="edit-product-form-container" style="display: none;">
+                    <!-- Edit product form will appear here dynamically -->
+                </div>
+                
+            </ul>
+        </section>
+        
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
