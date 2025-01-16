@@ -6,6 +6,8 @@
     <title>Profile Management</title>
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
     <header class="profile-header">
@@ -53,6 +55,17 @@
             <button id="manage-credit-card-button" class="btn btn-primary" onclick="redirectTocredit()">Manage Credit Card</button>
 
         </section>
+        <section class="address-section">
+            <h2>Manage Address</h2>
+            <div id="map" style="height: 300px; border-radius: 8px; margin-bottom: 20px;"></div>
+            <input type="text" id="address-input" placeholder="Address" readonly>
+            <button id="save-address" class="btn btn-success">Save Address</button>
+            <ul id="address-list">
+                <!-- User's saved addresses will be displayed here -->
+            </ul>
+        </section>
+        
+        
         
     </main>
     <script>
@@ -62,5 +75,6 @@
         }
     </script>
     <script src="profile.js"></script>
+ 
 </body>
 </html>

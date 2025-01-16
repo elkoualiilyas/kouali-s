@@ -310,11 +310,11 @@ viewOrdersButton.addEventListener('click', () => {
     window.editReview = (productId) => {
         const existingReview = getReview(productId);
     
-        if (existingReview && existingReview.user === currentUser) {
+        if (existingReview && existingReview.user === currentUser.email) {
             const newReviewText = prompt('Edit your review:', existingReview.text);
     
             if (newReviewText !== null && newReviewText.trim() !== '') {
-                setReview(productId, { text: newReviewText.trim(), user: currentUser });
+                setReview(productId, { text: newReviewText.trim(), user: currentUser.email });
                 renderProducts(); // Re-render products to reflect the updated review
             }
         } else {
@@ -325,7 +325,7 @@ viewOrdersButton.addEventListener('click', () => {
     window.removeReview = (productId) => {
         const existingReview = getReview(productId);
     
-        if (existingReview && existingReview.user === currentUser) {
+        if (existingReview && existingReview.user === currentUser.email) {
             deleteReview(productId);
             renderProducts(); // Re-render products to remove the review
         } else {
@@ -473,12 +473,17 @@ viewOrdersButton.addEventListener('click', () => {
             alert("Please add a credit card before proceeding!");
             return;
         }
-    
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const currentUserData = users.find(user => user.email === currentUser.email);
+        const userAddress =
+        currentUserData?.addresses?.length > 0
+            ? currentUserData.addresses[0] // Default to the first address
+            : "No address available";
         const orders = getOrders();
-    
-        // Create a new order with unique ID and 'on-going' status
+        // Create a new order
         const newOrder = {
-            id: orders.length + 1, // Incremental ID for each order
+            id: orders.length + 1,
             status: 'on-going',
             items: cart.map(item => ({
                 id: item.id,
@@ -486,7 +491,9 @@ viewOrdersButton.addEventListener('click', () => {
                 price: item.price,
                 quantity: item.quantity
             })),
-            date: new Date().toLocaleString() // Optional: Add a timestamp for the order
+            userEmail: currentUser.email, // Add user's email
+            deliveryAddress: userAddress, // Add user's address
+            date: new Date().toLocaleString() // Optional: Add timestamp
         };
     
         // Add the new order to the orders array

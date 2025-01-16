@@ -16,8 +16,8 @@ body {
 
 /* Header Styles */
 .admin-header {
-    background-color: #fcfdff; /* Primary blue color */
-    color: #4d4d4d;
+    background-color: #2a3d45; /* Match the dark header color */
+    color: white;
     padding: 20px;
     text-align: center;
     font-size: 24px;
@@ -44,7 +44,7 @@ body {
 
 /* Navigation Styles */
 .admin-nav {
-    background-color: #e6e2e2;
+    background-color: #e6f4f1; /* Soft aqua background */
     padding: 10px 20px;
     display: flex;
     gap: 15px;
@@ -52,7 +52,7 @@ body {
 }
 
 .admin-nav .btn {
-    background-color: #0044cc;
+    background-color: #4aa1a4; /* Aqua button for navigation */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -62,7 +62,7 @@ body {
 }
 
 .admin-nav .btn:hover {
-    background-color: #003399;
+    background-color: #368b8f; /* Darker aqua hover */
 }
 
 /* Main Content */
@@ -81,7 +81,7 @@ body {
 /* Section Titles */
 h2 {
     font-size: 24px;
-    color: #0044cc;
+    color: #4aa1a4;
     margin-bottom: 20px;
 }
 
@@ -99,7 +99,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #0044cc;
+    background-color: #4aa1a4; /* Match navigation button color */
     color: white;
     font-weight: bold;
 }
@@ -128,11 +128,11 @@ form input, form button {
 
 form input:focus {
     outline: none;
-    border-color: #0044cc;
+    border-color: #4aa1a4;
 }
 
 form button {
-    background-color: #28a745; /* Green button for add */
+    background-color: #4aa1a4; /* Aqua button for submit */
     color: white;
     border: none;
     cursor: pointer;
@@ -140,7 +140,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #218838;
+    background-color: #368b8f; /* Darker aqua hover */
 }
 
 /* Buttons */
@@ -172,12 +172,12 @@ form button:hover {
 }
 
 .btn-primary {
-    background-color: #0044cc;
+    background-color: #4aa1a4; /* Match aqua buttons */
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #003399;
+    background-color: #368b8f;
 }
 
 /* Chart.js Canvas */
@@ -214,37 +214,27 @@ canvas {
         height: 300px;
     }
 }
-/* Rest of your styles */
-
-/* Chart Container and Box */
-/* Ensure your reset and base styles remain */
 
 /* Chart Container and Box */
 .chart-container {
     display: flex;
-    justify-content: space-between; /* Adjust spacing between charts */
-    gap: 20px; /* Adds space between chart boxes */
-    flex-wrap: nowrap; /* Ensures the charts remain on the same line */
+    justify-content: space-between; /* Space between charts */
+    gap: 20px;
+    flex-wrap: nowrap;
     margin-top: 20px;
-    width: 100px;
 }
 
 .chart-box {
-    flex: 1; /* Ensures charts take equal width */
-    width: 600px; /* Restricts the width of each chart */
-    height: 400px; /* Ensures consistent height */
-    background-color: #f9f9f9;
+    flex: 1;
+    max-width: 48%; /* Equal chart width */
+    height: 400px; /* Chart height */
+    background-color: #fff;
     padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5%;
 }
 
-
+/* Vehicles Section */
 #vehicles-section {
     margin: 20px;
 }
@@ -263,7 +253,8 @@ canvas {
 }
 
 #vehicles-table th {
-    background-color: #f2f2f2;
+    background-color: #4aa1a4;
+    color: white;
     font-weight: bold;
 }
 

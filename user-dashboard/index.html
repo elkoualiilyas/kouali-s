@@ -75,7 +75,21 @@
         </section>
         
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser')); // Get the current user from localStorage
+    const profileIcon = document.getElementById('profile-icon'); // The avatar at the top of the page
 
+    if (currentUser && currentUser.profilePicture) {
+        // Set the user's profile picture if it exists
+        profileIcon.src = currentUser.profilePicture;
+    } else {
+        // Set default profile picture if none is available
+        profileIcon.src = 'profile.png';
+    }
+    });
+
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

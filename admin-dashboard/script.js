@@ -489,6 +489,16 @@ renderVehicles();
         alert('You have been logged out successfully!');
         window.location.href = '../login.html';
     });
+
+    (async () => {
+        try {
+            await showSection(overviewSection); // Show the overview section
+            await renderCharts(); // Render charts for the overview section
+            console.log('Dashboard Overview section rendered successfully.');
+        } catch (error) {
+            console.error('Error displaying Dashboard Overview section:', error);
+        }
+    })();
     
 });
 

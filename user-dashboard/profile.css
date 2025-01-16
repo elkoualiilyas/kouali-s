@@ -269,3 +269,40 @@ form button:hover {
     margin: 5px 0;
     color: #333;
 }
+.address-section {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#address-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#address-list li button {
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#address-list li button:hover {
+    background: #c9302c;
+}

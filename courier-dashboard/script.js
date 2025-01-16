@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Retrieve orders assigned to the courier
     const orders = JSON.parse(localStorage.getItem('orders')) || [];
+    const users = JSON.parse(localStorage.getItem('users')) || [];
     const assignedOrders = orders.filter(order => order.courier === currentCourier.name);
 
     // Render assigned orders
@@ -26,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         assignedOrders.forEach((order, index) => {
+            const user = users.find(u => u.email === order.userEmail) || {};
+            const address = user.addresses && user.addresses.length > 0 ? user.addresses[0] : 'No address available';
+
             const li = document.createElement('li');
             li.className = 'order-item';
             li.innerHTML = `
@@ -36,13 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <ul class="order-details">
                     ${order.items.map(item => `<li>${item.name} - $${item.price} x ${item.quantity}</li>`).join('')}
                 </ul>
+                <p><strong>Delivery Address:</strong> ${address}</p>
                 <div class="order-actions">
                     <label for="status-select-${index}">Update Status:</label>
-                    <select id="status-select-${index}" ${order.status === 'delivered' ? 'disabled' : ''}>
+                    <select id="status-select-${index}" ${order.status === 'confirmed' ? 'disabled' : ''}>
                         <option value="in-transit" ${order.status === 'in-transit' ? 'selected' : ''}>In-Transit</option>
                         <option value="delivered" ${order.status === 'delivered' ? 'selected' : ''}>Delivered</option>
                     </select>
-                    <button onclick="updateOrderStatus(${index})" ${order.status === 'delivered' ? 'disabled' : ''}>Update</button>
+                    <button onclick="updateOrderStatus(${index})" ${order.status === 'confirmed' ? 'disabled' : ''}>Update</button>
                 </div>
             `;
             orderList.appendChild(li);
@@ -56,6 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update the order status
         assignedOrders[index].status = newStatus;
+
+        if (newStatus === 'delivered') {
+            // Automatically confirm the delivered order
+            assignedOrders[index].status = 'complete';
+        }
 
         // Save back to localStorage
         localStorage.setItem('orders', JSON.stringify(orders));

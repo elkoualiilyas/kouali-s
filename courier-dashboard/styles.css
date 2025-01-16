@@ -3,40 +3,62 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
+    background: linear-gradient(to bottom, #ffffff, #e0f7f9); /* White to aqua gradient */
     color: #333;
 }
 
 /* Header Styles */
 .courier-header {
-    background: #0044cc;
-    color: #fff;
+    background: linear-gradient(to right, #004d4d, #009999); /* Teal gradient */
+    color: white;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .courier-header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .courier-header .btn {
-    margin-top: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff4d4d; /* Red logout button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.courier-header .btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
 }
 
 /* Main Content Styles */
 .courier-content {
-    padding: 20px;
-    max-width: 800px;
+    padding: 30px;
+    max-width: 900px;
     margin: 0 auto;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .courier-content h2 {
-    color: #0044cc;
-    margin-bottom: 20px;
+    color: #004d4d; /* Dark teal */
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
+/* Order List */
 .order-list {
     list-style: none;
     padding: 0;
@@ -44,38 +66,55 @@ body {
 }
 
 .order-item {
-    background: #fff;
+    background: white;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
+    border-radius: 10px;
+    padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.order-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Order Header */
 .order-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
+.order-header strong {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Order Status */
 .order-status {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
     text-transform: capitalize;
+    text-align: center;
+    display: inline-block;
 }
 
 .order-status.in-transit {
-    background: #ffcc00;
-    color: #fff;
+    background: #00cccc; /* Aqua for in-transit */
+    color: white;
 }
 
 .order-status.delivered {
-    background: #28a745;
-    color: #fff;
+    background: #00b359; /* Teal green for delivered */
+    color: white;
 }
 
+/* Order Details */
 .order-details {
     list-style: none;
     padding: 0;
@@ -83,9 +122,12 @@ body {
 }
 
 .order-details li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
 }
 
+/* Actions */
 .order-actions {
     margin-top: 15px;
     display: flex;
@@ -94,21 +136,62 @@ body {
 }
 
 .order-actions select {
-    padding: 5px;
+    padding: 8px 10px;
+    font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    color: #333;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+.order-actions select:focus {
+    border-color: #009999; /* Aqua focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 153, 153, 0.5);
 }
 
 .order-actions button {
-    background: #0044cc;
-    color: #fff;
+    background: #009999; /* Aqua for update button */
+    color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 5px;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .order-actions button:hover {
-    background: #003399;
+    background: #007777;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-item {
+        padding: 15px;
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
