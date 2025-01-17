@@ -166,6 +166,23 @@
         .form-footer a:hover {
             text-decoration: underline;
         }
+                
+        .role-container {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column; /* Change to 'row' for horizontal alignment */
+            gap: 5px;
+        }
+
+        .role-container label {
+            display: inline-block;
+        }
+
+        .role-container input {
+            margin-right: 10px;
+            vertical-align:auto;
+        }
+
     </style>
 </head>
 <body>
@@ -183,12 +200,16 @@
 
             <div class="role-container">
                 <label>Register As:</label>
-                <input type="radio" id="role-user" name="role" value="user" checked>
-                <label for="role-user">User</label>
-
-                <input type="radio" id="role-seller" name="role" value="seller">
-                <label for="role-seller">Seller</label>
+                <div>
+                    <input type="radio" id="role-user" name="role" value="user" checked>
+                    <label for="role-user">User</label>
+                </div>
+                <div>
+                    <input type="radio" id="role-seller" name="role" value="seller">
+                    <label for="role-seller">Seller</label>
+                </div>
             </div>
+            
 
             <button type="submit" class="btn-one"><span>Register</span></button>
         </form>

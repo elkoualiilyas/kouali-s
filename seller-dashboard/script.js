@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Asynchronous function to update local storage with error handling
 const updateLocalStorage = async () => {
     try {
-        await Promise.resolve(); // Simulate async behavior
+        await Promise.resolve();
         localStorage.setItem('categories', JSON.stringify(categories));
         localStorage.setItem('products', JSON.stringify(products));
         console.log('LocalStorage updated successfully.');

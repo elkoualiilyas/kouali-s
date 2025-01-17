@@ -281,10 +281,8 @@ viewOrdersButton.addEventListener('click', () => {
     
         if (index === -1) {
             wishlist.push(product); // Add to wishlist
-            alert(`${product.name} has been added to your wishlist.`);
         } else {
             wishlist.splice(index, 1); // Remove from wishlist
-            alert(`${product.name} has been removed from your wishlist.`);
         }
     
         setWishlist(wishlist); // Save updated wishlist for the current user
